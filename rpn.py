@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import operator
+import readline
 
 operators = {
         '+': operator.add,
@@ -29,8 +30,8 @@ def calculate(arg):
 
 def main():
     while True:
-       result =  calculate(input("rpn calc> "))
-       print(result)
+       result =  calculate(input("\033[91m {}\033[00m" .format("rpn calc> ")))
+       print("\033[91m {}\033[00m" .format(result))
 
 if __name__ == '__main__':
     main()
