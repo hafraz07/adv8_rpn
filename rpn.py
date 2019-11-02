@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import operator
 import readline
-
+from colorama import init
+from colorama import Fore, Back, Style
 operators = {
         '+': operator.add,
         '-': operator.sub,
@@ -29,9 +30,10 @@ def calculate(arg):
 
 
 def main():
+    init()
     while True:
-       result =  calculate(input("\033[91m {}\033[00m" .format("rpn calc> ")))
-       print("\033[91m {}\033[00m" .format(result))
+       result =  calculate(input(Fore.RED + "rpn calc> "))
+       print(result)
 
 if __name__ == '__main__':
     main()
