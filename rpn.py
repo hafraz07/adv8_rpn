@@ -6,6 +6,7 @@ operators = {
         '-': operator.sub,
         '*': operator.mul,
         '/': operator.floordiv,
+        '^': operator.pow
  }
 def calculate(arg):
     stack = list()
@@ -19,9 +20,6 @@ def calculate(arg):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        else:
-            stack.append((int(token)))
-
        # print(stack)
     if len(stack) != 1:
        raise TypeError('malformed input')
